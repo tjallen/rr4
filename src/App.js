@@ -14,6 +14,12 @@ const Links = () => {
 }
 
 class App extends Component {
+  constructor() {
+    super();
+    this.state = {
+      numbers: [0,1,2,3,4,5,6,7,9]
+    };
+  }
   render() {
     return (
       <div>
@@ -25,11 +31,12 @@ class App extends Component {
               path="/about"
               children={({ match }) => match && <h1>About</h1>}
             />
+            {this.state.numbers.map(number => {
+              return (<p key={number}>{number}</p>)
+            })}
             <Links />
           </div>
-          
         </Router>
-        
       </div>
     );
   }
