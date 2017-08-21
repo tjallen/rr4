@@ -119,8 +119,18 @@ hr {
   flex-wrap: wrap;
 }
 
+.movie-listings .movie-name {
+  position: absolute;
+  font-size: 10px;
+  text-align: center;
+  top: 0px;
+  color: #fff;
+}
+
 .movie-listings .movie-image {
   padding-right: 6px;
+  overflow: hidden;
+  position: relative;
 }
 
 .page-not-found {
