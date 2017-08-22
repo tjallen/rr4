@@ -3,8 +3,14 @@ import './App.css';
 import Home from './components/Home';
 import Movie from './components/Movie';
 import Movies from './components/Movies';
+import PageNotFound from './components/PageNotFound';
 
-import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
+import {
+  BrowserRouter as Router,
+  Route,
+  Link,
+  Switch
+} from 'react-router-dom';
 
 class App extends Component {
   render() {
@@ -18,9 +24,13 @@ class App extends Component {
           </div>
 
           <div className="container">
-            <Route exact path="/" component={Home} />
-            <Route exact path="/movies" component={Movies} />
-            <Route path="/movies/:movieId" component={Movie} />
+            <Switch>
+              <Route exact path="/" component={Home} />
+              <Route exact path="/movies" component={Movies} />
+              <Route path="/movies/:movieId" component={Movie} />
+              <Route component={PageNotFound} />
+            </Switch>
+
           </div>
         </div>
       </Router>

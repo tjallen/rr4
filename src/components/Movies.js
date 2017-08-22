@@ -5,7 +5,7 @@ import movies from '../movies.json';
 const Movies = () => (
   <div>
     <h2 className="movies-header">
-      Movies
+      All movies
     </h2>
 
     <hr />
